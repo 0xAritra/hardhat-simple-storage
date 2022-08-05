@@ -15,5 +15,18 @@ npx hardhat run scripts/deploy.js
 # 
 
 ```shell
+yarn
+
 yarn hardhat run scripts/deploy.js --network hardhat
+
+npx hardhat node
+yarn hardhat run scripts/deploy.js --network localhost
+
+yarn hardhat run scripts/deploy.js --network goerli
+
+yarn hardhat block-number --network goerli
+
+yarn hardhat test
+
+yarn hardhat coverage
 ```
