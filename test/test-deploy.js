@@ -21,4 +21,15 @@ describe("Simple Storage", function () {
         const updatedValue = await simpleStorage.retrieve()
         assert.equal(updatedValue.toString(), expectedValue)
     })
+    it("Should add person and favorite number to the mapping and array", async function () {
+        const expNum = "1"
+        const expName = "Ari"
+        const transactionResponse = await simpleStorage.addPerson("Ari", expNum)
+        await transactionResponse.wait(1)
+        const res = await simpleStorage.nameToFavNum("Ari")
+        const [resNum, resName] = await simpleStorage.person(0)
+        assert.equal(res, expNum)
+        assert.equal(resName, expName)
+        assert.equal(resNum, expNum)
+    })
 })
